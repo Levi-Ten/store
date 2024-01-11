@@ -1,0 +1,88 @@
+.home {
+    /* height: 88vh; */
+    background-color: rgb(227, 255, 230);
+
+}
+
+.home__container {
+    margin-top: 5%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgb(111, 241, 124);
+
+}
+
+.home__text {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid;  */
+    position: relative;
+}
+
+.home__content {
+    /* border: 1px solid; */
+    width: fit-content;
+}
+
+.home__content p:nth-child(1) {
+    font-size: 1.45rem;
+    font-weight: 500;
+    line-height: 180%;
+}
+
+.home__content h1 {
+    font-size: 3rem;
+}
+
+.home__content p:nth-child(3) {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 180%;
+}
+
+.home__content p:nth-child(3) span {
+    color: rgb(107, 114, 128);
+}
+
+.home__image {
+    width: 40%;
+    height: 500px;
+}
+
+.home__image img {
+    object-fit: contain;
+}
+
+.ball {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.ball__green {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(67, 185, 127);
+    bottom: 10%;
+    left: 35%;
+}
+
+.ball__red {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(254, 102, 80);
+    bottom: 20%;
+    left: 15%;
+}
+
+.ball__violet {
+    width: 35px;
+    height: 35px;
+    background-color: rgb(193, 128, 210);
+    top: 10%;
+    right: 15%;
+}

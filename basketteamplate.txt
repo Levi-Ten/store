@@ -1,0 +1,74 @@
+import { Trash } from "phosphor-react";
+import React, { useEffect, useState } from "react";
+import "./basketTemplate.css";
+
+function BasketTemplate({ id, image, title, price, quantity, number }) {
+  const getProducts = JSON.parse(localStorage.getItem("cart"));
+
+  const [count, setCount] = useState(getProducts);
+  const num = quantity + 1;
+
+  const [test, setTest] = useState(price);
+
+  function addProduct(id) {
+    setCount((prev) =>
+      prev.map((item) =>
+        item.id === id
+          ? { ...item, quantity: num, priceSumm: price * num }
+          : item
+      )
+    );
+    // window.location.reload(true);
+  }
+
+  let summResult = count
+    ?.filter((el) => el.id === id)
+    .map((e) => {
+      return e.priceSumm;
+    });
+
+  // useEffect(()=>{
+  //   setTest(summResult)
+  // },[])
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(count));
+  }, [count]);
+
+  return (
+    <div className="basket__block">
+      <div className="basket__block-image">
+        <img src={image} alt={title} />
+      </div>
+      <div className="basket__block-info">
+        <p className="info__title">{title}</p>
+        <p className="info__price">
+          {/* {price} */}
+          {summResult}
+          {/* {test} */}
+          <span>$</span>
+        </p>
+        <p className="info__quantity">{quantity}</p>
+        <div>
+          <button
+            className="info__btn"
+            onClick={() => addProduct(id)}
+            title="add to cart"
+          >
+            +
+          </button>
+          <button className="info__btn" title="remove from cart">
+            -
+          </button>
+        </div>
+        <div className="delete__block">
+          <button className="delete__block-btn">
+            <Trash size={32} />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default BasketTemplate;

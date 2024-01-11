@@ -1,0 +1,19 @@
+.header {
+    /* height: 12vh; */
+}
+
+.header__link a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2b3f50;
+}
+
+.header__link svg {
+    margin-left: 20px;
+    color: rgb(2, 29, 88);
+}
+
+.header__link svg:hover {
+    color: rgb(7, 48, 136);
+
+}
