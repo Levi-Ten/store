@@ -2,6 +2,7 @@ import React from "react";
 import "./home.css";
 import hero from "../imagesApp/hero-right.png";
 function Home() {
+  console.log(123);
   return (
     <div className="home">
       <div className="home__container">
